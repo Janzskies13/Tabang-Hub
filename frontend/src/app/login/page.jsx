@@ -1,81 +1,79 @@
 export default function Login() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
-      <div className="w-full max-w-md px-6 py-12 bg-white shadow-md rounded-lg">
-        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 via-teal-400 to-blue-500">
+      <div className="w-full max-w-lg p-8 bg-white shadow-lg rounded-3xl">
+        <div className="text-center">
           <img
-            className="mx-auto h-48 w-auto"
+            className="mx-auto h-24 w-24 rounded-full"
             src="/images/logo.png"
-            alt="Your Company"
+            alt="TabangHub Logo"
           />
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Login
+          <h2 className="mt-6 text-3xl font-extrabold text-gray-800">
+            Welcome Back, Volunteer!
           </h2>
+          <p className="mt-2 text-gray-600">
+            Please log in to access your volunteer account
+          </p>
         </div>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
-          <form className="space-y-6" action="./dashboard" method="POST">
+        <form className="mt-10 space-y-6" action="/volunteer/dashboard" method="POST">
+          <div className="space-y-4">
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Email address
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Email Address
               </label>
-              <div className="mt-2">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none sm:text-sm"
+                placeholder="Enter your email"
+              />
             </div>
 
             <div>
-              <div className="flex items-center justify-between">
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
-                >
-                  Password
-                </label>
-                <div className="text-sm">
-                  <a
-                    href="#"
-                    className="font-semibold text-indigo-600 hover:text-indigo-500"
-                  >
-                    Forgot password?
-                  </a>
-                </div>
-              </div>
-              <div className="mt-2">
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                Password
+              </label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autoComplete="current-password"
+                required
+                className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none sm:text-sm"
+                placeholder="Enter your password"
+              />
             </div>
 
-            <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Sign in
-              </button>
+            <div className="flex items-center justify-between">
+              <div className="text-sm">
+                <a href="#" className="font-medium text-green-600 hover:text-green-500">
+                  Forgot password?
+                </a>
+              </div>
             </div>
-          </form>
-          <h1 className="text-center mt-4">
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl text-sm font-bold text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-300"
+            >
+              Sign In
+            </button>
+          </div>
+        </form>
+
+        <div className="mt-6 text-center">
+          <p className="text-sm text-gray-600">
             Don’t have an account?{" "}
-            <a href="./register" className="text-blue-600">
+            <a href="./register" className="text-green-600 font-medium hover:text-green-500">
               Sign Up
             </a>
-          </h1>
+          </p>
         </div>
       </div>
     </div>

@@ -1,15 +1,14 @@
 "use client";
 
-import Navbar from "../navbar/page";
 import { useState } from "react";
 
 export default function Details() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
-    { src: "./images/balay.png", alt: "Building a house" },
-    { src: "./images/bricks.png", alt: "Bricks for building" },
-    { src: "./images/build.png", alt: "Building under construction" },
+    { src: "/images/balay.png", alt: "Building a house" },
+    { src: "/images/bricks.png", alt: "Bricks for building" },
+    { src: "/images/build.png", alt: "Building under construction" },
   ];
 
   const prevSlide = () => {
@@ -23,8 +22,7 @@ export default function Details() {
   };
 
   return (
-    <div className="min-h-full bg-gray-50">
-      <Navbar />
+    <div className="min-h-full bg-gray-50 px-4 sm:px-6 lg:px-8"> {/* Added padding */}
       <div className="bg-white flex justify-center items-center min-h-[80vh]">
         <div className="pt-6 pb-16">
           {/* Layout for Carousel and Details */}

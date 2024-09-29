@@ -1,20 +1,25 @@
+"use client";
+
+import * as React from 'react';
+
 export default function Profile() {
   return (
     <div className="bg-gray-100 font-sans min-h-screen flex items-center justify-center p-6">
       <div className="max-w-3xl bg-white p-8 shadow-lg rounded-3xl">
         {/* Header */}
         <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">Janvel Andrino</h1>
-          <p className="text-xl text-gray-600 mb-4">Panday</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">Alan Gabriel Dosado</h1>
+          <p className="text-xl text-gray-600 mb-4">Macho Dancer & Volunteer</p>
         </header>
 
         {/* Profile Section */}
         <section className="flex items-center mb-8 rounded-lg overflow-hidden bg-gray-50 p-6">
-          <div className="w-40 h-40">
+          <div className="w-40 h-40 flex-shrink-0">
+            {/* Ensure the profile picture is a circle */}
             <img
-              src="/images/help.png"
+              src="/images/choy.png" // Assuming the image is located in the public folder at /images
               alt="Profile Picture"
-              className="w-full h-full rounded-full border-4 border-gray-200 object-cover"
+              className="w-full h-full rounded-full object-cover border-4 border-gray-200"
             />
           </div>
           <div className="ml-6">
@@ -30,8 +35,8 @@ export default function Profile() {
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">Skills</h2>
           <ul className="list-disc pl-5 text-gray-700 space-y-2">
             <li>Performance and Choreography</li>
-            <li>Mason</li>
-            <li>Wildder</li>
+            <li>Event Coordination</li>
+            <li>Team Collaboration</li>
             <li>Public Speaking</li>
           </ul>
         </section>

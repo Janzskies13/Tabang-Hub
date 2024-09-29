@@ -4,21 +4,21 @@ export default function OrganizationDashboard() {
       <main className="flex-1 p-6">
         {/* Dashboard Overview */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Total Volunteers</h3>
-            <p className="text-2xl font-bold text-gray-700">120</p>
+          <div className="bg-lime-700 p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold text-white mb-2">Total Volunteers</h3>
+            <p className="text-2xl font-bold text-white">120</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Total Donations</h3>
-            <p className="text-2xl font-bold text-gray-700">$5,000</p>
+          <div className="bg-lime-700 p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold text-white mb-2">Total Donations</h3>
+            <p className="text-2xl font-bold text-white">$5,000</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Total Events</h3>
-            <p className="text-2xl font-bold text-gray-700">20</p>
+          <div className="bg-lime-700 p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold text-white mb-2">Total Events</h3>
+            <p className="text-2xl font-bold text-white">20</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Ongoing Events</h3>
-            <p className="text-2xl font-bold text-gray-700">5</p>
+          <div className="bg-lime-700 p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold text-white mb-2">Ongoing Events</h3>
+            <p className="text-2xl font-bold text-white">5</p>
           </div>
         </section>
 
