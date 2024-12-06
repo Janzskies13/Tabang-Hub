@@ -1,12 +1,33 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function ManageEvent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
+
+  const handleSaveEvent = (e) => {
+    e.preventDefault();
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Do you want to save this event?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, save it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Logic to save the event goes here
+        Swal.fire("Saved!", "Your event has been saved.", "success");
+        setIsModalOpen(false); // Close the modal after saving
+      }
+    });
+  };
 
   return (
     <div className="bg-gray-50 min-h-screen p-8">
@@ -22,14 +43,14 @@ export default function ManageEvent() {
           type="text"
           placeholder="Search events..."
           className="w-full max-w-md p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition ease-in-out duration-200"
-          style={{ height: '2.75rem' }} // Adjust height to match button
+          style={{ height: "2.75rem" }} // Adjust height to match button
         />
 
         {/* Create Event Button */}
         <button
           onClick={handleOpenModal}
           className="ml-4 bg-lime-700 text-white py-3 px-6 rounded-md shadow hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition ease-in-out duration-200"
-          style={{ height: '2.75rem' }} // Matches height of search bar
+          style={{ height: "2.75rem" }} // Matches height of search bar
         >
           + Create Event
         </button>
@@ -65,7 +86,6 @@ export default function ManageEvent() {
                 <button className="text-red-600 hover:underline ml-4 transition duration-200">Delete</button>
               </td>
             </tr>
-            {/* Add more event rows as needed */}
           </tbody>
         </table>
       </div>
@@ -75,7 +95,7 @@ export default function ManageEvent() {
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-8 rounded-md shadow-lg max-w-lg w-full">
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">Create Event</h2>
-            <form>
+            <form onSubmit={handleSaveEvent}>
               <div className="mb-6">
                 <label htmlFor="eventName" className="block text-gray-700 mb-2">Event Name</label>
                 <input
